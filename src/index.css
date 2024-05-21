@@ -1,0 +1,139 @@
+@import url('../public/fonts/fonts.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter';
+  background-color: #0A090C;
+  color: #FDFDFD;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+}
+
+input {
+  opacity: 1 !important;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  color: #45110e1a
+}
+
+.ant-steps .ant-steps-item-wait .ant-steps-item-icon{
+  background:  #98A2B3 ;
+  color: white !important;
+}
+.ant-steps .ant-steps-item-wait .ant-steps-item-content{
+  display: none;
+}
+.ant-steps-item-title{
+  color: white !important;
+}
+.ant-steps .ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-tail::after{
+  border-top: 1px dashed #98A2B3;
+}
+.ant-steps .ant-steps-item-wait>.ant-steps-item-container>.ant-steps-item-tail::after{
+  
+  border-top: 1px dashed #98A2B3;
+}
+.ant-steps .ant-steps-item-finish .ant-steps-item-icon{
+  background-color: #10B981;
+}
+.ant-steps .ant-steps-item-finish .ant-steps-item-content{
+  display: none;
+}
+.ant-steps .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-tail::after{
+  background-color: #10B981;
+}
+
+.ant-steps.ant-steps-label-vertical .ant-steps-item-tail{
+  padding: 0 !important;
+ 
+}
+.ant-steps .ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-tail{
+  padding-left: 16px !important;
+}
+
+.ant-steps-icon svg{
+  fill: white;
+}
+
+.ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector{
+  background-color: transparent;
+  border: 1px solid #85888E;
+}
+.ant-select-single .ant-select-selector .ant-select-selection-placeholder{
+  color: #85888E;
+}
+.ant-select-show-search:where(.css-dev-only-do-not-override-17seli4).ant-select:not(.ant-select-customize-input) .ant-select-selector input{
+  color: white;
+}
+.ant-select-single {
+  height: 42px !important;
+}
+.ant-checkbox-wrapper{
+  color: #FFF;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; 
+  width: 100%  !important;
+  margin-bottom: 16px;
+}
+
+.ant-switch {
+  background-color: #333333 !important;
+}
+.ant-switch.ant-switch-checked{
+  background-color: #1677ff !important;
+}
+
+.mybgColor{
+  background:  rgb(31, 36, 47,.7);
+}
