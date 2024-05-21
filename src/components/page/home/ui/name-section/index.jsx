@@ -1,6 +1,6 @@
 import GlobalInput from "../../../../ui/form/global-input";
 
-export default function NameSection({register,watchedFiles}) {
+export default function NameSection({register,watchedFiles,setError,errors}) {
   return (
     <>
        <GlobalInput
@@ -9,8 +9,10 @@ export default function NameSection({register,watchedFiles}) {
           placeholder={'joy nomi'}
           label={"Joy nomi"}
           value={watchedFiles?.name || "" }
-          register={{ ...register(`name`)}}
-            />
+          register={{ ...register(`name`, { required: 'This field is required' }) }}
+        errors={errors?.name?.message && errors?.name?.message}
+        onKeyDown={()=>setError('name',null)}
+        />
         <GlobalInput
             className={'max-w-[298px]'}
             type="tel"
@@ -18,7 +20,7 @@ export default function NameSection({register,watchedFiles}) {
             label={"Telefon raqami"} 
             mask="+\9\9\8-99-999-99-99"
             value={watchedFiles?.phone ||"" }
-            register={{...register(`phone`) }}
+            register={{ ...register(`phone`) }}
             />
     </>
   )

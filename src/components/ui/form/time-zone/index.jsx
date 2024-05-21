@@ -33,8 +33,8 @@ const TimeZoneSelect = ({ value, onChange }) => {
       };
   
     const handleChange = (value) => {
-    //   onChange(value);
-    console.log(value)
+      onChange(value);
+  
     };
 
     return (

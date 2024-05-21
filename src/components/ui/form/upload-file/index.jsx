@@ -1,6 +1,15 @@
 import { UploadFileIcons } from "../../icons";
 
-export default function UploadFile() {
+export default function UploadFile({  setFile,setValue }) {
+  
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    setValue("image",file )
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setFile(imageUrl);
+    }
+  };
   return (
     <label class="w-full cursor-pointer max-w-[175px] h-36 px-6 py-4 bg-zinc-800/opacity-20 rounded-xl border border-zinc-700 flex-col justify-start items-center gap-1 inline-flex">
     <div class="self-stretch h-28 flex-col justify-start items-center gap-3 flex">
@@ -14,7 +23,7 @@ export default function UploadFile() {
             <div class="self-stretch text-center text-neutral-400 text-xs font-normal  leading-[18px]">PNG yoki JPG   (max. 800x400px)</div>
         </div>
           </div>
-          <input type={"file"}  className="hidden"/>
+          <input type={"file"} onChange={handleImageChange}  accept='image/*' className="hidden"/>
 </label>
   )
 }

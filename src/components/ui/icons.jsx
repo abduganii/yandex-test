@@ -56,4 +56,25 @@ export const DoneIcons= () => {
 }
 
 
+export const InfoIcons= () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <g clip-path="url(#clip0_1_20811)">
+        <path d="M10 13.3334V10.0001M10 6.66675H10.0084M18.3334 10.0001C18.3334 14.6025 14.6024 18.3334 10 18.3334C5.39765 18.3334 1.66669 14.6025 1.66669 10.0001C1.66669 5.39771 5.39765 1.66675 10 1.66675C14.6024 1.66675 18.3334 5.39771 18.3334 10.0001Z" stroke="#98A2B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_1_20811">
+        <rect width="20" height="20" fill="white"/>
+        </clipPath>
+        </defs>
+        </svg>
+    )
+}
+export const TreeIcons= () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
+        <path d="M8.51471 14.0711C8.51471 14.962 7.43757 15.4081 6.8076 14.7782L0.736529 8.7071C0.346004 8.31658 0.346005 7.68342 0.736529 7.29289L6.8076 1.22183C7.43757 0.591867 8.51471 1.03803 8.51471 1.92894L8.51471 14.0711Z" fill="#333741"/>
+        </svg>
+    )
+}
 

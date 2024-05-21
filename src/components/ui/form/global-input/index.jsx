@@ -11,7 +11,10 @@ export default function GlobalInput({
     onSearch,
     onSelect,
     options,
+    disabled,
     mask,
+    errors,
+    onKeyDown,
     ...other
 }) { 
     return (
@@ -21,7 +24,7 @@ export default function GlobalInput({
                 type == "tel"
                     ?
                     <ReactInputMask
-                       className="w-full bg-transparent px-3.5 py-2.5 bg-zinc-800/opacity-20 rounded-lg shadow border border-zinc-700 justify-start items-center gap-2 inline-flex"
+                        className={`w-full bg-transparent px-3.5 py-2.5 bg-zinc-800/opacity-20 rounded-lg shadow border border-zinc-700 justify-start items-center gap-2 inline-flex  ${errors && " bg-zinc-800/opacity-20 rounded-lg shadow border border-rose-700"}`}
                         value={value}
                         type={type}
                         placeholder={placeholder}
@@ -43,7 +46,7 @@ export default function GlobalInput({
                         :
                         type == "textarea" ?
                             <textarea
-                                className="w-full bg-transparent px-3.5 py-2.5 bg-zinc-800/opacity-20 rounded-lg shadow border border-zinc-700 justify-start items-center gap-2 inline-flex" 
+                                className="w-full bg-transparent px-3.5 py-2.5 bg-zinc-800/opacity-20 rounded-lg shadow border border-zinc-700 justify-start items-center gap-2 inline-flex " 
                                 type={type}
                                 cols={4}
                                 rows={8}
@@ -55,14 +58,21 @@ export default function GlobalInput({
                             
                         </textarea>  :
                         <input
-                        className="w-full bg-transparent px-3.5 py-2.5 bg-zinc-800/opacity-20 rounded-lg shadow border border-zinc-700 justify-start items-center gap-2 inline-flex" 
-                        type={type}
-                        placeholder={placeholder}
-                        value={value}
-                        {...register}
-                        {...other}
+                                className={`w-full bg-transparent px-3.5 py-2.5 bg-zinc-800/opacity-20 rounded-lg shadow border border-zinc-700 justify-start items-center gap-2 inline-flex ${disabled ? "cursor-not-allowed" : "cursor-text"} 
+                                ${errors && " bg-zinc-800/opacity-20 rounded-lg shadow border border-rose-700"}
+                                `} 
+                                type={type}
+                                placeholder={placeholder}
+                                value={value}
+                                disabled={disabled}
+                                  onKeyDown={onKeyDown}
+                                {...register}
+                                {...other}
                     />
             }
+
+            {errors &&<p className="text-rose-700 text-sm font-normal  leading-tight mt-[6px] ml-[2px]">{ errors}</p>}
        </label> 
     )
 }
+

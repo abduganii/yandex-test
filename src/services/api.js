@@ -5,7 +5,7 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_BACKEND_URL,
   headers: {
     "Accept":  "application/json",
-    "Content-Type": "application/json",
+    'Content-Type': "multipart/form-data",
   },
  
 });

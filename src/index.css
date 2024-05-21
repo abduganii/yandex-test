@@ -137,3 +137,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .mybgColor{
   background:  rgb(31, 36, 47,.7);
 }
+
+.myhover:hover~div{
+  display: inline-flex;
+}

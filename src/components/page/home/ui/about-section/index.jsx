@@ -2,24 +2,90 @@ import { Checkbox } from "antd";
 
 const options = [
   {
-    label: 'Apple',
-    value: 'Apple',
+    label: 'Wi-Fi',
+    value: 'wi-fi',
   },
   {
-    label: 'Pear',
-    value: 'Pear',
+    label: 'Dam olish xonasi',
+    value: 'bathroom',
   },
   {
-    label: 'Orange',
-    value: 'Orange',
+    label: 'Parking',
+    value: 'parking',
+  },
+  {
+    label: 'Delivery',
+    value: 'delivery',
   },
 ];
-export default function AboutSection() {
+const options1 = [
+  {
+    label: 'Tikishxona',
+    value: 'custom_tailor',
+  },
+  {
+    label: 'Ximchistka',
+    value: 'chemical_cleaning',
+  },
+  {
+    label: 'Gilam yuvish',
+    value: 'gilam_yuvish',
+  },
+
+];
+const options2 = [
+  {
+    label: 'Dorixona',
+    value: 'pharmacy',
+  },
+
+  {
+    label: 'Ved dorixona',
+    value: 'ved_dorixona',
+  },
+  {
+    label: 'Agro dorixona',
+    value: 'agro_dorixona',
+  },
+
+];
+
+
+
+export default function AboutSection({setValue,watchedFiles}) {
+  
+  const onChangeFung = (e) => {
+    if (!watchedFiles?.about_choices?.length) {
+      setValue('about_choices',e )
+      
+    } else {
+      e?.map(v => {
+        if (watchedFiles?.about_choices?.includes(v)) {
+          setValue('about_choices', watchedFiles?.about_choices?.filter(f=>f != v))
+        } else {
+          setValue('about_choices', [v, ...watchedFiles?.about_choices])
+        }
+          
+      } )
+
+    }
+  }
     return (
-      <div className="flex">
-        <Checkbox.Group options={options} defaultValue={['Apple']} />
-        <Checkbox.Group options={options} defaultValue={['Apple']} />
-        <Checkbox.Group options={options} defaultValue={['Apple']} />
+      <div className="flex flew-wrap">
+        <div className="w-full">
+           <Checkbox.Group options={options} onChange={onChangeFung}  />
+         
+        </div>
+       
+        <div className="w-full">
+           <Checkbox.Group options={options1} onChange={onChangeFung}  />
+          
+        </div>
+       
+        <div className="w-full">
+           <Checkbox.Group options={options2}  onChange={onChangeFung} />
+        
+        </div>
       </div>
     )
   }

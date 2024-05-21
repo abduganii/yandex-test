@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Steps } from 'antd';
 
@@ -14,7 +14,6 @@ import ImageSection from './ui/image-section';
 import FullNameSection from './ui/full-name-section';
 import CategorySection from './ui/category-section';
 import AboutSection from './ui/about-section';
-import SeccessModal from '../../ui/modal';
 
 const stepsComponents = [
   NameSection,
@@ -28,7 +27,7 @@ const stepsComponents = [
 ];
 export default function HomePage() {
   const [step, setSteps] = useState(0)
-  const [open,setOpen] = useState(false)
+  
     const {
         register,
         handleSubmit,
@@ -36,11 +35,20 @@ export default function HomePage() {
         setValue,
         getValues,
         reset,
-        watch,
+      watch,
+      trigger,
         formState: { errors },
     } = useForm();
-  const watchedFiles = watch(); 
-  console.log(watchedFiles)
+  const watchedFiles = watch();
+
+  const checkValidation = async () => {
+    if (step ==0) {
+      const result = await trigger('name'); // 'myInput' is the name of the field to validate
+      return result;
+    } 
+    return true
+  };
+  
   return (
     <ContainerMin>
         <Steps
@@ -50,12 +58,15 @@ export default function HomePage() {
             className={"mb-[32px]"}
         />
         <GlobalForm
-            url={'tour'} // url to send date "api"
+            url={'new-place/'}// url to send date "api"
             handleSubmit={handleSubmit} // form send date function "api"
-              title={StepArray[step].title}
-              setSteps={setSteps}
-              step={step}
-              maxStepLength={StepArray?.length}
+             title={StepArray[step].title}
+             info={StepArray[step]?.info}
+            setSteps={setSteps}
+            step={step}
+            reset={reset}
+            isValidStep={ checkValidation}
+            maxStepLength={StepArray?.length}
       > 
         {React.createElement(stepsComponents[step], {
                     register,
@@ -68,7 +79,7 @@ export default function HomePage() {
              {stepsComponents[step]}
       </GlobalForm>
       
-      {open && <SeccessModal close={()=>setOpen(false)} />}
+   
     </ContainerMin>
   )
 }

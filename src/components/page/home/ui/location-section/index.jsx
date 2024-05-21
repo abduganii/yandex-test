@@ -1,7 +1,7 @@
 import GlobalInput from "../../../../ui/form/global-input";
 import YandexMap from "../../../../ui/yandex-map";
 
-export default function LocationSection({ setValue }) {
+export default function LocationSection({watchedFiles, register,setValue }) {
 
   const handleLocationSelect = (coords) => {
     setValue("latitude", coords?.[0]);
@@ -15,6 +15,8 @@ export default function LocationSection({ setValue }) {
         placeholder={"Manzil"}
         label={"Joy manzilini kiriting"}
         className={"max-w-[298px] mb-[32px]"}
+        value={watchedFiles?.full_address || "" }
+          register={{ ...register(`full_address`)}}
       />
       <YandexMap onLocationSelect={handleLocationSelect} />
       <GlobalInput
@@ -22,6 +24,8 @@ export default function LocationSection({ setValue }) {
         placeholder={"Joy haqida"}
         type={"textarea"}
         className={"mt-[32px]"}
+        value={watchedFiles?.about || "" }
+          register={{ ...register(`about`)}}
       />
     </div>
   );
