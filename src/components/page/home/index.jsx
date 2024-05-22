@@ -14,6 +14,7 @@ import ImageSection from './ui/image-section';
 import FullNameSection from './ui/full-name-section';
 import CategorySection from './ui/category-section';
 import AboutSection from './ui/about-section';
+import SptepRespons from '../../ui/step-respons';
 
 const stepsComponents = [
   NameSection,
@@ -27,7 +28,7 @@ const stepsComponents = [
 ];
 export default function HomePage() {
   const [step, setSteps] = useState(0)
-  
+  const [type,setType]= useState(false)
     const {
         register,
         handleSubmit,
@@ -50,13 +51,25 @@ export default function HomePage() {
   };
   
   return (
-    <ContainerMin>
+    <ContainerMin >
+      <div className={"mb-[32px] hidden md:block"}>
         <Steps
             current={step} 
             labelPlacement="vertical"
             items={StepArray} 
-            className={"mb-[32px]"}
-        />
+            
+      />
+
+      </div>
+      
+      <SptepRespons
+        step={step}
+        setStep={setSteps}
+        isValidStep={ checkValidation}
+        stepArr={StepArray}
+        type={type}
+          setType={setType}
+      />
         <GlobalForm
             url={'new-place/'}// url to send date "api"
             handleSubmit={handleSubmit} // form send date function "api"
@@ -65,7 +78,9 @@ export default function HomePage() {
             setSteps={setSteps}
             step={step}
             reset={reset}
-            isValidStep={ checkValidation}
+        isValidStep={checkValidation}
+          type={type}
+          setType={setType}
             maxStepLength={StepArray?.length}
       > 
         {React.createElement(stepsComponents[step], {

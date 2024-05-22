@@ -4,7 +4,7 @@ export default function NameSection({register,watchedFiles,setError,errors}) {
   return (
     <>
        <GlobalInput
-          className={'max-w-[298px] mb-[32px]'}
+          className={'sm:max-w-[298px] mb-[32px]'}
           type="text"
           placeholder={'joy nomi'}
           label={"Joy nomi"}
@@ -14,7 +14,7 @@ export default function NameSection({register,watchedFiles,setError,errors}) {
         onKeyDown={()=>setError('name',null)}
         />
         <GlobalInput
-            className={'max-w-[298px]'}
+            className={'sm:max-w-[298px]'}
             type="tel"
             placeholder={'+998'}
             label={"Telefon raqami"} 

@@ -1,6 +1,6 @@
 import { UploadFileIcons } from "../../icons";
 
-export default function UploadFile({  setFile,setValue }) {
+export default function UploadFile({  file,setFile,setValue }) {
   
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -11,7 +11,7 @@ export default function UploadFile({  setFile,setValue }) {
     }
   };
   return (
-    <label class="w-full cursor-pointer max-w-[175px] h-36 px-6 py-4 bg-zinc-800/opacity-20 rounded-xl border border-zinc-700 flex-col justify-start items-center gap-1 inline-flex">
+    <label class={ `w-full cursor-pointer max-w-[175px] h-36 px-6 py-4 bg-zinc-800/opacity-20 rounded-xl border border-zinc-700 flex-col justify-start items-center gap-1 inline-flex ${file ? "hidden  lg:inline-flex  lg:flex-col" : "inline-flex  flex-col"}`}>
     <div class="self-stretch h-28 flex-col justify-start items-center gap-3 flex">
         <div class="w-10 h-10 p-2.5 rounded-lg shadow border border-zinc-700 justify-center items-center inline-flex">
         <UploadFileIcons/>

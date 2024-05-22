@@ -71,20 +71,19 @@ export default function AboutSection({setValue,watchedFiles}) {
     }
   }
     return (
-      <div className="flex flew-wrap">
-        <div className="w-full">
+      <div className="flex flex-wrap sm:flex-nowrap gap-[10px]">
+   
+
+        <div className="w-1/3 sm:w-full ">
            <Checkbox.Group options={options} onChange={onChangeFung}  />
-         
         </div>
        
-        <div className="w-full">
+        <div className="w-1/3 sm:w-full ">
            <Checkbox.Group options={options1} onChange={onChangeFung}  />
-          
         </div>
-       
-        <div className="w-full">
+     
+        <div className="w-full ">
            <Checkbox.Group options={options2}  onChange={onChangeFung} />
-        
         </div>
       </div>
     )

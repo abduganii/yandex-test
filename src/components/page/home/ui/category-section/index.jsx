@@ -179,7 +179,7 @@ export default function CategorySection({setValue,watchedFiles}) {
   }
 
     return (
-      <div className="flex flew-wrap">
+      <div className="flex flew-wrap gap-[10px]">
         <div className="w-full">
           <h4 class="text-white text-lg font-medium  leading-7 mb-[16px]">Ovqatlanish</h4>
            <Checkbox.Group options={options}  onChange={onChangeFung}  />
@@ -196,7 +196,7 @@ export default function CategorySection({setValue,watchedFiles}) {
            <Checkbox.Group options={options4}    onChange={onChangeFung}/>
         </div>
        
-        <div className="w-full">
+        <div className="w-full hidden sm:block">
           <h4 class="text-white text-lg font-medium  leading-7 mb-[16px]">Sport</h4>
            <Checkbox.Group options={options5}   onChange={onChangeFung} />
           <h4 class="text-white text-lg font-medium  leading-7 mb-[16px] mt-[56px]">Boshqa</h4>

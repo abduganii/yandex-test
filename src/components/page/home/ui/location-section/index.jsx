@@ -14,7 +14,7 @@ export default function LocationSection({watchedFiles, register,setValue }) {
       <GlobalInput
         placeholder={"Manzil"}
         label={"Joy manzilini kiriting"}
-        className={"max-w-[298px] mb-[32px]"}
+        className={"sm:max-w-[298px] mb-[32px]"}
         value={watchedFiles?.full_address || "" }
           register={{ ...register(`full_address`)}}
       />

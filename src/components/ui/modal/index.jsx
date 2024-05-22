@@ -3,7 +3,7 @@ import { DeleteXIcons, DoneIcons } from '../icons'
 
 export default function SeccessModal({ok,close}) {
     return (
-        <div onClick={close} class="w-screen h-screen fixed top-0 left-0  bg-gray-800/opacity-70 mybgColor flex justify-center items-center" style={{"zIndex":"1111111111000"}}>
+        <div onClick={close} class="w-screen h-screen fixed top-0 left-0  bg-gray-800/opacity-70 mybgColor flex justify-center items-end sm:items-center  p-[20px] pb-[80px]" style={{"zIndex":"1111111111000"}}>
             <div onClick={(e)=>e.stopPropagation()} class="w-full max-w-[400px]  p-[24px]  bg-zinc-950  rounded-lg" style={{"zIndex":"1111111111001"}}>
                 <div className='flex justify-between cursor-pointer' onClick={close}>
                     <div class=" p-3 bg-emerald-600 rounded-full justify-center items-center inline-flex">

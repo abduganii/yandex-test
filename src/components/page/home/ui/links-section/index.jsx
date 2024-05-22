@@ -6,7 +6,7 @@ export default function LinksSection({ register, watchedFiles }) {
         placeholder={"www.example.com"}
         label={"Web sayt uchun havola"}
         options={[]}
-        className={"max-w-[298px] mb-[32px]"}
+        className={"sm:max-w-[298px] mb-[32px]"}
         value={watchedFiles?.website || ""}
         register={{ ...register(`website`) }}
       />
@@ -14,7 +14,7 @@ export default function LinksSection({ register, watchedFiles }) {
         placeholder={"www.instagram.com"}
         label={"Instagram sahifasi uchun havola"}
         options={[]}
-        className={"max-w-[298px] mb-[32px]"}
+        className={"sm:max-w-[298px] mb-[32px]"}
         value={watchedFiles?.instagram || ""}
         register={{ ...register(`instagram`) }}
       />
@@ -22,7 +22,7 @@ export default function LinksSection({ register, watchedFiles }) {
         placeholder={"www.teleram.me"}
         label={"Telegram sahifasi uchun havola"}
         options={[]}
-        className={"max-w-[298px] mb-[32px]"}
+        className={"sm:max-w-[298px] mb-[32px]"}
         value={watchedFiles?.telegram || ""}
         register={{ ...register(`telegram`) }}
       />
@@ -30,7 +30,7 @@ export default function LinksSection({ register, watchedFiles }) {
         placeholder={"@telegram_bot"}
         label={"Telegram bot uchun havola"}
         options={[]}
-        className={"max-w-[298px] mb-[32px]"}
+        className={"sm:max-w-[298px] mb-[32px]"}
         value={watchedFiles?.telegram_bot || ""}
         register={{ ...register(`telegram_bot`) }}
       />
@@ -38,7 +38,7 @@ export default function LinksSection({ register, watchedFiles }) {
         placeholder={"www.facebook.com"}
         label={"Facebook sahifasi uchun havola"}
         options={[]}
-        className={"max-w-[298px] mb-[32px]"}
+        className={"sm:max-w-[298px] mb-[32px]"}
         value={watchedFiles?.facebook || ""}
         register={{ ...register(`facebook`) }}
       />
@@ -46,7 +46,7 @@ export default function LinksSection({ register, watchedFiles }) {
         placeholder={"www.twitter.com"}
         label={"Twitter sahifasi uchun havola"}
         options={[]}
-        className={"max-w-[298px] mb-[32px]"}
+        className={"sm:max-w-[298px] mb-[32px]"}
         value={watchedFiles?.twitter || ""}
         register={{ ...register(`twitter`) }}
       />
@@ -54,7 +54,7 @@ export default function LinksSection({ register, watchedFiles }) {
         placeholder={"www.youtube.com"}
         label={"Youtube sahifasi uchun havola"}
         options={[]}
-        className={"max-w-[298px] mb-[32px]"}
+        className={"sm:max-w-[298px] mb-[32px]"}
         value={watchedFiles?.youtube || ""}
         register={{ ...register(`youtube`) }}
       />

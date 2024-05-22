@@ -78,3 +78,15 @@ export const TreeIcons= () => {
     )
 }
 
+
+
+
+export const BurgerIcons = ()=>{
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+<path d="M3.5 5.8335H24.5" stroke="#FDFDFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.5 14H24.5" stroke="#FDFDFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.5 22.1665H24.5" stroke="#FDFDFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    )
+}

@@ -135,9 +135,15 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .mybgColor{
-  background:  rgb(31, 36, 47,.7);
+  background:  rgb(31, 36, 47,.9);
 }
 
 .myhover:hover~div{
   display: inline-flex;
+}
+
+@media screen and (max-width:768px) {
+  .myForm{
+    min-height: 65vh;
+  }
 }
