@@ -111,7 +111,7 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #85888E;
 }
 .ant-select-show-search:where(.css-dev-only-do-not-override-17seli4).ant-select:not(.ant-select-customize-input) .ant-select-selector input{
-  color: white;
+  color: white !important;
 }
 .ant-select-single {
   height: 42px !important;
