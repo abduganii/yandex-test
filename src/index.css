@@ -134,6 +134,9 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: #1677ff !important;
 }
 
+.ant-select-selection-search-input{
+  color: white !important;
+}
 .mybgColor{
   background:  rgb(31, 36, 47,.9);
 }
