@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import GlobalInput from "../../../../ui/form/global-input";
+import scrollIntoView from "scroll-into-view-if-needed";
 export default function LinksSection({
   register,
   watchedFiles,
@@ -8,8 +10,9 @@ export default function LinksSection({
   const urlRegex = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)$/;
 
   const validateURL = (value) => {
-    return urlRegex.test(value) || "URL shuold start with https";
+    return urlRegex.test(value) || "URL shuold start with https:";
   };
+
   return (
     <div>
       <GlobalInput

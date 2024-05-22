@@ -105,7 +105,7 @@ export default function HomePage() {
           getValues,
           watchedFiles,
           errors,
-          setError
+          setError,
         })}
         {stepsComponents[step]}
       </GlobalForm>
