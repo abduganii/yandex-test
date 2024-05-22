@@ -73,9 +73,9 @@ export default function WorkingTimeSection({ register, watchedFiles ,setValue}) 
           <div className="flex items-center gap-[8px]">
             <GlobalInput
               type="time"
-                className={"max-w-[77px]"}
+                className={"max-w-[77px] my-inpt"}
                 disabled={!Actives.includes(e?.id) }
-                style={{ padding: "8px 16px" }}
+                
                 value={watchedFiles?.work_days?.[i]?.startTime || "" }
                 register={Actives.includes(e?.id) ? { ...register(`work_days.[${i}].startTime`)}:null}
             />
@@ -84,9 +84,9 @@ export default function WorkingTimeSection({ register, watchedFiles ,setValue}) 
             </div>
             <GlobalInput
               type="time"
-                className={"max-w-[77px]"}
+                className={"max-w-[77px] my-inpt"}
                 disabled={!Actives.includes(e?.id) }
-                style={{ padding: "8px 16px" }}
+               
                 value={watchedFiles?.work_days?.[i]?.endTime || "" }
                 register={Actives.includes(e?.id) ? { ...register(`work_days.[${i}].endTime`)}:null}
             />
