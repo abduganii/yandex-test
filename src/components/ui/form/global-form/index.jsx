@@ -49,9 +49,16 @@ export default function  ({
               setOpen(true)
               reset()
             })
-            .catch((error) => {
-                toast.error("somthing went wrong")
-                console.log(error)
+          .catch((error) => {
+            if (error?.response?.data) {
+              if (error?.response?.data?.website) toast.error(error?.response?.data?.website?.[0]) 
+              else if (error?.response?.data?.telegram) toast.error(error?.response?.data?.telegram?.[0]) 
+              else if (error?.response?.data?.facebook) toast.error(error?.response?.data?.facebook?.[0]) 
+              else if (error?.response?.data?.youtube) toast.error(error?.response?.data?.youtube?.[0]) 
+            } else {
+              toast.error("somthing went wrong")
+              }
+                
             })
           .finally(() => {
             setType(false)
